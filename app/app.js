@@ -21,10 +21,10 @@ culinaryApp.config(function($routeProvider){
     .when("/contacts", {
         templateUrl: "app/contacts/contacts.html"
     })
-    .when("/login", {
-        templateUrl: "app/login/login.html",
-        controller: "loginCtrl"
-    })
+    // .when("/login", {
+    //     templateUrl: "app/login/login.html",
+    //     controller: "loginCtrl"
+    // })
     .when("/newUser", {
         templateUrl: "app/newUser/newUser.html",
         controller: "newUserCtrl"

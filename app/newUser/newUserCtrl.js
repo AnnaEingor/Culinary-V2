@@ -1,10 +1,6 @@
-//  culinaryApp.controller("newUserCtrl", function($scope, User, Users){
-//     $scope.firstName = " ";
-//      $scope.lastName = " ";
-//      $scope.email = " "; 
-//      $scope.phone = " "; 
-     
-//         $scope.newUser = new User({});
+  //culinaryApp.controller("newUserCtrl", function($scope, User){
+    
+    
     
     //      $scope.saveUser = function(){
     //        var userArr = Users.getAllUsers();
@@ -31,12 +27,23 @@
     //  });
 
  culinaryApp.controller("newUserCtrl", function($scope, $uibModal){
- $scope.saveUser = function(){
-    
-        $uibModal.open({
+     $scope.formInfo ={};
+
+     $scope.saveUser = function(){
+        //console.log($scope.formInfo);
+        var obj = $scope.formInfo;
+        var serialObj = JSON.stringify(obj);   //сериализуем полученный объект
+
+        localStorage.setItem("myKey", serialObj);
+        //var returnObj = JSON.parse(localStorage.getItem("myKey"));   //спарсим его обратно объект
+        //console.log(returnObj.firstName);    //извлечем нужный кусок
+
+         $uibModal.open({
         templateUrl: "app/newUser/thank.html",
           controller: "thankCtrl"
           
-      });
-      };
- })
+      }); 
+    
+    };
+
+});

@@ -15,7 +15,7 @@
                 <div class="form-group" ng-class="{ 'has-error': userForm.firstName.$touched && userForm.firstName.$invalid }">
                     <label for="firstName" class="col-sm-2 control-label">First Name</label>
                     <div class="col-sm-10">
-                        <input type="text" name="firstName" id="firstName" placeholder="First Name" class="form-control" ng-model="firstName"
+                        <input type="text" name="firstName" id="firstName" placeholder="First Name" class="form-control" ng-model="formInfo.firstName"
                             ng-minlength="3" ng-maxlength="12" required>
                     </div>
                     <div class="help-block" ng-messages="userForm.firstName.$error" ng-if="userForm.firstName.$touched">
@@ -28,7 +28,7 @@
                 <div class="form-group" ng-class="{ 'has-error': userForm.lastName.$touched && userForm.lastName.$invalid }">
                     <label for="lastName" class="col-sm-2 control-label">Last Name</label>
                     <div class="col-sm-10">
-                        <input type="text" name = "lastName" id="lastName" placeholder="Last Name" class="form-control" ng-model="lastName"
+                        <input type="text" name = "lastName" id="lastName" placeholder="Last Name" class="form-control" ng-model="formInfo.lastName"
                         ng-minlength="3" ng-maxlength="15" required>
                     </div>
                     <div class="help-block" ng-messages="userForm.lastName.$error" ng-if="userForm.lastName.$touched">
@@ -41,7 +41,7 @@
                 <div class="form-group" ng-class="{ 'has-error': userForm.email.$touched && userForm.email.$invalid }">
                     <label for="email" class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="email" name = "email" id="email" placeholder="Email" class="form-control" ng-model="email"
+                        <input type="email" name = "email" id="email" placeholder="Email" class="form-control" ng-model="formInfo.email"
                         ng-minlength="5" ng-maxlength="20" required>
                     </div>
                     <div class="help-block" ng-messages="userForm.email.$error" ng-if="userForm.email.$touched">
@@ -55,7 +55,7 @@
                 <div class="form-group" ng-class="{ 'has-error': userForm.tel.$touched && userForm.tel.$invalid }">
                     <label for="phone" class="col-sm-2 control-label">Phone Number</label>
                     <div class="col-sm-10">
-                        <input type="tel" id="phone" name = "tel" placeholder="Phone number" class="form-control" ng-model="phone"
+                        <input type="tel" id="phone" name = "tel" placeholder="Phone number" class="form-control" ng-model="formInfo.phone"
                         ng-minlength="7" ng-maxlength="12" required>
                     </div>
                     <div class="help-block" ng-messages="userForm.tel.$error" ng-if="userForm.tel.$touched">
@@ -79,6 +79,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- <pre>{{formInfo}}</pre> -->
             </form>
         </div>
         <div class="col-sm-4">
