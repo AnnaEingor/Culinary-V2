@@ -1,4 +1,4 @@
-var culinaryApp = angular.module("culinaryApp", ["ngRoute", "ngAnimate", "ui.bootstrap", "ngMessages"]); 
+var culinaryApp = angular.module("culinaryApp", ["ngRoute", "ngAnimate", "ui.bootstrap", "ngMessages", "firebase"]); 
 
 culinaryApp.config(function($routeProvider){
     $routeProvider
@@ -39,14 +39,3 @@ culinaryApp.config(function($routeProvider){
     });
 });
 
-// culinaryApp.config(function() {
-//      var config = {
-//          apiKey: "AIzaSyC1aWEIcA_We_mvqKDauyzFwEoF3gFnKkg",
-//          authDomain: "culinaryschool-c8176.firebaseapp.com",
-//          databaseURL: "https://culinaryschool-c8176.firebaseio.com",
-//          projectId: "culinaryschool-c8176",
-//          storageBucket: "culinaryschool-c8176.appspot.com",
-//          messagingSenderId: "64236661875"
-//        };
-//      firebase.initializeApp(config);
-//    });
