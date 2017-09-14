@@ -1,5 +1,5 @@
-*{
-    font-family: 'Droid Sans', sans-serif;
+body{
+    font-family: 'Philosopher', sans-serif;
   }
   .navbar {
     margin-bottom: 0;
@@ -11,7 +11,14 @@
     letter-spacing: 2.1px;
     border-radius: 0;
 }
-
+.navbar-brand {
+    padding: 0px; /*  bug fix */
+  }
+  .navbar-brand>img {
+    height: 100%;
+    padding: 5px; /* bug fix */
+    width: auto;
+  }
 .navbar li a, .navbar .navbar-brand {
     color: #EFEBE9 !important;
 }
@@ -33,6 +40,11 @@
 #myColor{
     color: #4E342E; 
     font-size: 1.2em;
+}
+#myColor img{
+    width: 25%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .container-fluid {
     padding: 60px 10px;

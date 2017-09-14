@@ -7,30 +7,50 @@
         var obj = $scope.formInfo;
         var serialObj = JSON.stringify(obj);   //сериализуем полученный объект
         localStorage.setItem("myKey", serialObj);
-        
 
-         $uibModal.open({
-        templateUrl: "app/newUser/thank.html",
-          controller: "thankCtrl"
-          
-      }); 
-
-      //1. добавляем в базу данных Firebase.  2. Очищаем поля формы после занесения в БД
-    
-      var ref = firebase.database().ref("students");
-      $firebaseArray(ref).$add(obj)
+        //1. добавляем в базу данных Firebase.  2. Очищаем поля формы после занесения в БД
+        var ref = firebase.database().ref("students");
+        $firebaseArray(ref).$add(obj)
           .then(
               function(ref){
-                  $scope.student.firstName = " ";
-                  $scope.student.lastName = " ";
-                  $scope.student.email = " ";
-                  $scope.student.phone = " ";
+               $scope.formInfo = {};
+               $scope.userForm.$setPristine();
+               
+               $scope.userForm.$setValidity();
+               $scope.userForm.$setUntouched();
+               // in my case I had to call $apply to refresh the page, you may also need this.
+               $scope.$apply();
         },
         function(error){
             console.log(error);
         }
         );
 
+         $uibModal.open({
+        templateUrl: "app/newUser/thank.html",
+          controller: "thankCtrl"
+       
+      }); 
+   
+
     };
 
+});
+
+culinaryApp.directive('clickOnce', function($timeout) {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            var deleteText = attrs.clickOnce;
+
+            element.bind('click', function() {
+                $timeout(function() {
+                    if (deleteText) {
+                        element.html(deleteText);
+                    }
+                    element.attr('disabled', true);
+                }, 0);
+            });
+        }
+    };
 });
