@@ -15,7 +15,6 @@
               function(ref){
                $scope.formInfo = {};
                $scope.userForm.$setPristine();
-               
                $scope.userForm.$setValidity();
                $scope.userForm.$setUntouched();
                // in my case I had to call $apply to refresh the page, you may also need this.

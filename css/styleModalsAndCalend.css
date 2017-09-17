@@ -7,20 +7,29 @@ h4.modal-title{
       color: #4E342E;
   }
 
+  @media screen and (min-width: 767px) {
   .responsiveCal {
        position: relative; 
        padding-bottom: 75%; 
        height: 0; 
        overflow: hidden;
-   
-   }
-    
-   .responsiveCal iframe {
+      }
+    .responsiveCal iframe {
       position: absolute; 
       top:5%; 
       left: 10%; 
       width: 80%; 
       height: 80%;
-      
    }
-    
+}
+
+.little-calendar {
+	width: 280px;
+	max-width: 100%;
+	overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+	.little-calendar {
+		display: none !important;
+	}
+}
